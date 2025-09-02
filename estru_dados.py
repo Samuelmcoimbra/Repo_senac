@@ -42,11 +42,30 @@ while True:
     except: 
         print('Digite um N° válido')'''
 
-nome_prod = [ ]
+num_prod = int(input('Quantos produtos deseja cadastrar?:'))
 valor_prod = [ ]
+nome_prod = [ ]
+
 
 while True:
     try:
-        valor = float(input('Digite o valor do produto'))
+        valor = float(input('Digite o valor do produto:\n'))
         valor_prod.append(valor)
-    sair = input('Deseja cadastrar mais valores? S/N').upper().strip
+        break
+    except:
+        print('Digite valores válidos')
+while True:
+     try:
+        nome = input('Coloque o nome do produto:\n')
+        nome_prod.append(nome)
+        sair = input('Deseja cadastrar mais produtos? S/N\n').upper().strip
+        if sair == 'N':
+            break
+     except:
+         print('Digite nomes válidos')
+
+
+
+print('O produto',nome_prod[1],'custa', valor_prod[1] )
+
+
