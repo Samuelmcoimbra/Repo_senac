@@ -52,10 +52,15 @@ qtd = int(input("Quantos produtos deseja cadastrar? "))
 
 i = 0
 while i < qtd:
-    nome = input(f"Digite o nome do produto {i+1}: ")
-    valor = float(input(f"Digite o valor do produto {i+1}: "))
+    try:
+        nome = input(f"Digite o nome do produto {i+1}: ")
+        valor = float(input(f"Digite o valor do produto {i+1}: "))
 
-   
+
+    except:
+        print("Entrada inválida. Tente novamente.")
+        continue
+
     nomes.append(nome)
     valores.append(valor)
 
