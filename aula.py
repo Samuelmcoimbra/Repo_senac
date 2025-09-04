@@ -28,7 +28,7 @@ else:
     print('Aprovado!!') '''
 
 # Atividade 3
-nome = input('Digite seu nome: ')
+'''nome = input('Digite seu nome: ')
 dias = int(input('Digite quantos dias deseja ficar hospedado: '))
 
 print('Tipos de quartos disponiveis')
@@ -48,5 +48,13 @@ elif tipo_de_quarto == 3:
     nome_quarto = 'Suite Hokage'
     valor_quarto = 250
 
-valor_total = ...
+valor_total = ...'''
 
+tarefas = []
+
+while True:
+    tarefa = input('Digite uma tarefa ou sair para finalizar: ')
+    if tarefa == 'sair':
+        break
+tarefas.append(tarefa)
+print(tarefas)
