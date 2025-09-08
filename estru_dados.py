@@ -42,47 +42,32 @@ while True:
     except: 
         print('Digite um N° válido')'''
 
+num_prod = int(input('Quantos produtos deseja cadastrar?:'))
+valor_prod = [ ]
+nome_prod = [ ]
 
-nomes = []
-valores = []
-qtd = int(input("Quantos produtos deseja cadastrar? "))
+valor = float(input(f"Digite o valor do produto {i+1}: "))
 
-i = 0
-
-while i < qtd:
-
-    nome = input(f"Digite o nome do produto {i+1}: ")
-
-    valor = float(input(f"Digite o valor do produto {i+1}: "))
-
+while True:
     try:
-
-
-        nome = input(f"Digite o nome do produto {i+1}: ")
-
-
-        valor = float(input(f"Digite o valor do produto {i+1}: "))
-
+        valor = float(input('Digite o valor do produto:\n'))
+        valor_prod.append(valor)
+        break
     except:
+        print('Digite valores válidos')
+while True:
+     try:
+        nome = input('Coloque o nome do produto:\n')
+        nome_prod.append(nome)
+        sair = input('Deseja cadastrar mais produtos? S/N\n').upper().strip
+        if sair == 'N':
+            break
+     except:
+         print('Digite nomes válidos')
+nome_prod.append(nome)
+valor_prod.append(valor)
 
 
-        print("Entrada inválida. Tente novamente.")
-
-
-        continue
-
-    nomes.append(nome)
-
-    valores.append(valor)
-
-    i += 1  # contador do while
-
-# Exibe relatório final
-
-print("RELATÓRIO DE PRODUTOS")
-
-for i in range(qtd):
-
-    print(f"Produto {i+1}: {nomes[i]} - R$ {valores[i]:.2f}")
+print('O produto',nome_prod[1],'custa', valor_prod[1] )
 
 
