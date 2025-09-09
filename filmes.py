@@ -1,0 +1,48 @@
+usu_filme = {'João': [], 'Samuel': [], 'Ana': [], 'Carla': []}
+
+# menu 1 - Adicionar filme
+while True:
+    menu = '1 - Adicionar filme\n2 - Remover filme\n3 - Ver filmes de um usuário\n4 - Ver todos os usuários\n0 - Sair'
+    print(menu)
+    try:
+            opcao = int(input("Escolha uma opção: "))
+            break
+    except:
+            print(" Digite uma opção válida!")
+match opcao:
+       case m if m == 1:
+        usuario = input('Digite o nome do usuário: ')
+        if usuario in usu_filme:
+                filme = input('Digite o nome do filme que deseja adicionar: ')
+                usu_filme[usuario].append(filme)
+                print(f'Filme {filme} adicionado ao usuário {usuario}.')
+        else:
+                print('Usuário não encontrado.')
+
+match opcao:    
+    case m if m == 2:
+        usuario = input('Digite o nome do usuário: ')
+        if usuario in usu_filme:
+                    filme = input('Digite o nome do filme que deseja remover: ')
+                    if filme in usu_filme[usuario]:
+                            usu_filme[usuario].remove(filme)
+                            print(f'Filme {filme} removido do usuário {usuario}.')
+                    else:
+                            print(f'Filme {filme} não encontrado para o usuário {usuario}.')
+        else:
+                    print('Usuário não encontrado.')    
+
+# Menu 3 - Ver filmes de um usuário
+match opcao:
+    case m if m == 3:
+        usuario = input('Digite o nome do usuário:')
+        if usuario in usu_filme:
+            filmes = usu_filme[usuario]
+            if filmes:
+                print(f'Filmes do usuário {usuario}: {", "(filmes)}')
+            else:
+                print(f'Usuário {usuario} não tem filmes cadastrados.')
+
+match opcao:
+    case m if m == 4:
+        print(usu_filme)               
