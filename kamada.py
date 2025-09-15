@@ -64,7 +64,7 @@ def registrar_pedido():
 # 3. Função para fechar a conta
 def fechar_conta():
     if not pedidos:
-        print("⚠️ Não há pedidos registrados.")
+        print("Não há pedidos registrados.")
         return
 
     id_pedido = int(input("Digite o número do pedido para fechar a conta: "))
@@ -83,9 +83,9 @@ def fechar_conta():
     print("Pedido não encontrado.")
 
 
-# -------------------------------
+
 # Menu interativo
-# -------------------------------
+
 def menu():
     while True:
         print("SISTEMA DE PEDIDOS")
@@ -106,7 +106,7 @@ def menu():
             print("Encerrando o sistema")
             break
         else:
-            print("⚠️ Opção inválida. Tente novamente.")
+            print("Opção inválida. Tente novamente.")
 
 
 # Executa o sistema
